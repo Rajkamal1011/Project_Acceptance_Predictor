@@ -1,0 +1,375 @@
+{% extends 'inputform/base.html' %} {% load static %} {% block content %}
+
+<script
+  type="module"
+  src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+></script>
+
+<div class="wrapper">
+  
+  {% include 'inputform/messages.html' %}
+
+  <div class="header">
+    <ul>  
+      <li class="active form_1_progessbar">
+        <div>
+          <p>1</p>
+        </div>
+      </li>
+
+      <li class="form_2_progessbar">
+        <div>
+          <p>2</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="form_wrap">
+    <div class="form_1 project_details">
+      <h2>Project Details</h2>
+      <form id="inputform1" class="inputform1" method="POST" action="">
+        {% csrf_token %}
+
+        <div class="form_container">
+          <div class="input_wrap">
+            <h4><label for="projecttitle">Project Title :</label></h4>
+            <input
+              type="text"
+              class="form-control"
+              name="projtitle"
+              placeholder="Enter project title"
+            />
+          </div>
+
+          <div class="input_wrap flex-container3">
+            <div>
+              <h5><label for="teacherprefix">Teacher Prefix :</label></h5>
+            </div>
+            <div>
+              <select class="custom-select" id="teacherprefixselector" required>
+                <h5><option selected>Select</option></h5>
+
+                <option value="dr">Dr</option>
+                <option value="mr">Mr</option>
+                <option value="mrs">Mrs</option>
+                <option value="ms">Miss</option>
+                <option value="teacher">Teacher</option>
+              </select>
+            </div>
+            <div>
+              <input
+                id="tpInputId"
+                type="hidden"
+                class="form-control"
+                name="tp"
+                value=""
+              />
+            </div>
+          </div>
+
+          <div class="input_wrap flex-container3">
+            <div>
+              <h5>
+                <label for="projectgradecategory"
+                  >Project Grade Category :</label
+                >
+              </h5>
+            </div>
+            <div>
+              <select class="custom-select" id="projectgradeselector" required>
+                <h5><option selected>Select</option></h5>
+
+                <option value="grades_prek_2">0-2</option>
+                <option value="grades_3_5">3-5</option>
+                <option value="grades_6_8">6-8</option>
+                <option value="grades_9_12">9-12</option>
+              </select>
+            </div>
+            <div>
+              <input
+                id="pgcInputId"
+                type="hidden"
+                class="form-control"
+                name="projgradecat"
+                value=""
+              />
+            </div>
+          </div>
+
+          <div class="input_wrap flex-container3">
+            <div>
+              <h5><label for="SchoolState">School State : </label></h5>
+            </div>
+            <div>
+              <select class="custom-select" id="schoolstateselector" required>
+                <h5><option selected>Select</option></h5>
+                <option value="ak">AK: Alaska</option>
+                <option value="al">AL: Alabama</option>
+                <option value="ar">AR: Arkansas</option>
+                <option value="az">AZ: Arizona</option>
+                <option value="ca">CA: California</option>
+                <option value="co">CO: Colorado</option>
+                <option value="ct">CT: Connecticut</option>
+                <option value="dc">DC: District of Columbia</option>
+                <option value="de">DE: Delaware</option>
+                <option value="fl">FL: Florida</option>
+                <option value="ga">GA: Georgia</option>
+                <option value="hi">HI: Hawaii</option>
+                <option value="ia">IA: Iowa</option>
+                <option value="id">ID: Idaho</option>
+                <option value="il">IL: Illinois</option>
+                <option value="in">IN: Indiana</option>
+                <option value="ks">KS: Kansas</option>
+                <option value="ky">KY: Kentucky</option>
+                <option value="la">LA: Louisiana</option>
+                <option value="ma">MA: Massachusetts</option>
+                <option value="md">MD: Maryland</option>
+                <option value="me">ME: Maine</option>
+                <option value="mi">MI: Michigan</option>
+                <option value="mn">MN: Minnesota</option>
+                <option value="mo">MO: Missouri</option>
+                <option value="ms">MS: Mississippi</option>
+                <option value="mt">MT: Montana</option>
+                <option value="nc">NC: North Carolina</option>
+                <option value="nd">ND: North Dakota</option>
+                <option value="ne">NE: Nebraska</option>
+                <option value="nh">NH: New Hampshire</option>
+                <option value="nj">NJ: New Jersey</option>
+                <option value="nm">NM: New Mexico</option>
+                <option value="nv">NV: Nevada</option>
+                <option value="ny">NY: New York</option>
+                <option value="oh">OH: Ohio</option>
+                <option value="ok">OK: Oklahoma</option>
+                <option value="or">OR: Oregon</option>
+                <option value="pa">PA: Pennsylvania</option>
+                <option value="ri">RI: Rhode Island</option>
+                <option value="sc">SC: South Carolina</option>
+                <option value="sd">SD: South Dakota</option>
+                <option value="tn">TN: Tennessee</option>
+                <option value="tx">TX: Texas</option>
+                <option value="ut">UT: Utah</option>
+                <option value="va">VA: Virginia</option>
+                <option value="vt">VT: Vermont</option>
+                <option value="wa">WA: Washington</option>
+                <option value="wi">WI: Wisconsin</option>
+                <option value="wv">WV: West Virginia</option>
+                <option value="wy">WY: Wyoming</option>
+              </select>
+            </div>
+            <div>
+              <input
+                id="ssInputId"
+                type="hidden"
+                class="form-control"
+                name="ss"
+                value=""
+              />
+            </div>
+          </div>
+
+          <div class="input_wrap form-group">
+            <div class="flex-container3">
+              <div>
+                <h5>
+                  <label for="ProjectCategories">Project Categories: </label>
+                </h5>
+              </div>
+              <div>
+                <select
+                  onchange="selectProjCategories(this)"
+                  class="custom-select"
+                  id="projectcategories"
+                  required
+                >
+                  <h5><option selected>Select</option></h5>
+                  <option value="appliedlearning">Applied Learning</option>
+                  <option value="health_sports">Health and Sports</option>
+                  <option value="history_civics">History and Civics</option>
+                  <option value="literacy_language">Literacy Language</option>
+                  <option value="math_science">Math Science</option>
+                  <option value="music_arts">Music Arts</option>
+                  <option value="specialneeds">Special Needs</option>
+                  <option value="warmth">Global Warming</option>
+                  <option value="care_hunger">Care and Hunger</option>
+                </select>
+                <div id="projCategories"></div>
+              </div>
+              <div>
+                <input
+                  id="ccInputId"
+                  type="hidden"
+                  class="form-control"
+                  name="cc"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="input_wrap form-group">
+            <div class="flex-container3">
+              <div>
+                <h5>
+                  <label for="ProjectSubCategories"
+                    >Project Sub Categories:
+                  </label>
+                </h5>
+              </div>
+              <div>
+                <select
+                  class="custom-select"
+                  id="projectcategories"
+                  onchange="selectProjSubCategories(this)"
+                  required
+                >
+                  <h5><option selected>Select</option></h5>
+                  <option value="appliedsciences">Applied Sciences</option>
+                  <option value="college_careerprep">College Career Prep</option>
+                  <option value="communityservice">Community Service</option>
+                  <option value="earlydevelopment">Early Development</option>
+                  <option value="economics">Economics</option>
+                  <option value="environmentalscience">
+                    Environmental Science
+                  </option>
+                  <option value="esl">Esl</option>
+                  <option value="extracurricular">Extra Curricular</option>
+                  <option value="financialliteracy">Financial Literacy</option>
+                  <option value="foreignlanguages">Foreign Languages</option>
+                  <option value="gym_fitness">Gym Fitness</option>
+                  <option value="health_lifescience">Health Lifescience</option>
+                  <option value="health_wellness">Health Wellness</option>
+                  <option value="history_geography">History Geography</option>
+                  <option value="literacy">Literacy</option>
+                  <option value="literature_writing">Literature Writing</option>
+                  <option value="mathematics">Mathematics</option>
+                  <option value="music">Music</option>
+                  <option value="nutritioneducation">
+                    Nutrition Education
+                  </option>
+                  <option value="other">Other</option>
+                  <option value="parentinvolvement">Parent Involvement</option>
+                  <option value="performingarts">Performing Arts</option>
+                  <option value="socialsciences">Social Sciences</option>
+                  <option value="specialneeds">Special Needs</option>
+                  <option value="teamsports">Team Sports</option>
+                  <option value="visualarts">Visual Arts</option>
+                  <option value="warmth">Global Warming</option>
+                  <option value="care_hunger">Care and Hunger</option>
+                </select>
+                <div id="projSubCategories"></div>
+              </div>
+              <div>
+                <input
+                  id="cscInputId"
+                  type="hidden"
+                  class="form-control"
+                  name="csc"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="input_wrap form-group">
+            <div class="flex-container3">
+              <div>
+                <h5>
+                  <label for="Teacher Previous Papers"
+                    >No of Papers Previously Submitted :</label
+                  >
+                </h5>
+              </div>
+              <div style="margin: 10px">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter number of papers"
+                  name="tpp"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="input_wrap form-group">
+            <div class="flex-container3">
+              <div>
+                <h5>
+                  <label for="Price">Price : </label>
+                </h5>
+              </div>
+              <div style="margin: 10px">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Price"
+                  name="price"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="input_wrap form-group">
+            <div class="flex-container3">
+              <div>
+                <input
+                  type="hidden"
+                  id="essayform1"
+                  class="form-control"
+                  name="essay"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="form_2 data_info" style="display: none">
+      <h2>Project Essay</h2>
+      <form id="inputform2" class="inputform2" method="POST" action="">
+        {% csrf_token %}
+        <div class="form_container">
+          <div class="input_wrap">
+            <textarea
+              class="form-control z-depth-1"
+              placeholder="Type or paste your essay here"
+              name="projectessay"
+              id="projectessayWindow"
+              rows="20"
+              cols="80"
+            ></textarea>
+          </div>
+        </div>
+      </form>
+    </div>
+</div>
+
+<div class="btns_wrap">
+    <div class="common_btns form_1_btns">
+      <button type="button" id="btnNext" name="btnNext" class="btn_next">
+        NEXT<span class="icon"
+          ><ion-icon name="arrow-forward-sharp"></ion-icon
+        ></span>
+      </button>
+    </div>
+    <div class="common_btns form_2_btns" style="display: none">
+      <button type="button" class="btn_back">
+        <span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span
+        >BACK
+      </button>
+      <button type="button" id="btnSubmit" name="btnSubmit" class="btn_submit">
+        SUBMIT<span class="icon"
+          ><ion-icon name="checkmark-sharp"></ion-icon
+        ></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script
+  type="text/javascript"
+  src="{% static 'javascript/scriptInputForm.js' %}"
+></script>
+
+{% endblock content %}

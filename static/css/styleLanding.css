@@ -1,0 +1,365 @@
+:root {
+    --primary-color-dark-blue-1: hsl(217, 28%, 15%);
+    --primary-color-dark-blue-2: hsl(218, 28%, 13%);
+    --primary-color-dark-blue-3: hsl(216, 53%, 9%);
+    --primary-color-dark-blue-4: hsl(219, 30%, 18%);
+    --accent-color-cyan: hsl(176, 68%, 64%);
+    --accent-color-blue: hsl(198, 60%, 50%);
+    --accent-color-blue-2: hsl(198, 60%, 35%);
+    --neutral-color-white: hsl(0, 0%, 100%);
+    --neutral-color-white-2: hsl(0, 0%, 85%);
+    --font-heading: 'Raleway', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    --padding-sm: 2.5rem 2rem;
+    --padding-md: 3.5rem 3rem;
+    --padding-lg: 4.5rem 4rem;
+    --padding-footer: 15rem 4rem 1rem;
+    --padding-footer-tablet: 20rem 3rem 1rem;
+    --padding-footer-mobile: 25rem 3rem 1rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    line-height: 1.7;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 1.7rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 0.5rem 0;
+    text-align: center;
+}
+
+.lg-p {
+    font-size: 1rem;
+}
+
+a {
+    color: var(--neutral-color-white);
+    font-family: var(--font-heading);
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+
+.body{
+    background-color: var(--primary-color-dark-blue-2);
+    color: var(--neutral-color-white);
+    font-family: var(--font-body);
+
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+    max-width: fit-content;
+    width: 100%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background: var(--primary-color-dark-blue-2);
+}
+
+section {
+    background: var(--primary-color-dark-blue-2);
+    padding: var(--padding-lg);
+}
+
+.content{
+    width: 100%;
+    min-height: 100vh;
+    top:0;
+    left:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-image{
+    width: 100%;
+    min-height: 100vh;
+    top:0;
+    left:0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.content h1{
+    font-size: 45px;
+    color: #fff;
+    font-weight: 400;;
+}
+
+.content p{
+    font-size: 14px;
+    color: var(--neutral-color-white-2);
+}
+
+/* === removing default button style ===*/
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+/* button styling */
+.button {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255,255,255,0.6);
+    --animation-color: var(--accent-color-blue);
+    --fs-size: 2em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+  }
+  /* this is the text, when you hover on button */
+  .hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    text-decoration: none;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+  }
+  /* hover */
+  .button:hover .hover-text {
+    text-decoration: none;
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color));
+  }
+
+  
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.features-item {
+    width: 33.33%;
+    padding: 2rem 2.5rem;
+    text-align: center;
+    color: var(--neutral-color-white);
+}
+
+.highlight {
+    color: var(--neutral-color-white);
+    font-weight: 900;
+    padding-bottom: 0%;
+    margin-top: 8px;
+}
+
+.lowlight {
+    color: hsl(210, 4%, 67%);
+    padding-top: 0%;
+    margin-bottom: 0px;
+}
+
+.members {
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+    padding: 1.5rem;
+}
+
+.members-item {
+    margin: 1rem;
+    flex-basis: 33.33%;
+    border-radius: 5px;
+    background-color: var(--primary-color-dark-blue-4);
+    box-shadow: 2px 2px 20px 2px var(--primary-color-dark-blue-3);
+    padding: 1.5rem;
+    color: var(--neutral-color-white);
+}
+
+.members-subitem {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.members-container .title-container {
+    padding: 2rem;
+}
+
+
+.members-container {
+    padding: 6rem 4rem;
+    text-align: center;
+}
+
+
+.client-img-container img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.client-name-container p:first-child {
+    margin-bottom: 1rem;
+}
+
+@media (max-width:1000px)
+{
+    section {
+        padding: var(--padding-sm);
+    }
+    .features-item {
+        width: 100%;
+    }
+    .features-item {
+        padding: 2rem 0;
+    }
+    .members {
+        flex-direction: column;
+    }
+}
+
+.square {
+position: relative;
+margin: 0 10px;
+width: 400px; height: 400px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.square .one {
+position: absolute;
+width: 100%;
+height: 100%;
+border: 2px solid black;
+border-radius: 32% 58% 69% 43% / 48% 32% 59% 55%;
+transition: 0.5s;
+animation: animate 6s linear infinite;
+
+}
+
+.twitch:hover .one {
+border: none;
+background: var(--accent-color-blue-2);
+}
+
+.square .two {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+border: 2px solid black;
+border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+transition: 0.5s;
+animation: animate 6s linear infinite;
+}
+
+.twitch:hover .two {
+border: none;
+background:  var(--accent-color-blue-2);
+
+}
+
+.square .three {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+border: 2px solid black;
+border-radius: 31% 45% 74% 35% / 38% 56% 51% 37%;
+transition: 0.5s;
+animation: animate2 10s linear infinite;
+}
+.twitch:hover .three {
+border: none;
+background: var(--accent-color-blue-2);
+}
+
+.circle {
+position: relative;
+padding: 40px 60px;
+text-align: center;
+transition: 0.5s;
+z-index: 1000;
+}
+
+.square:hover{
+color: white;
+}
+
+.content:hover {
+
+color: #ffffff;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+
+}
+
+.DrugRadar{
+    font-size: 40px;
+    color: var(--neutral-color-white);
+}

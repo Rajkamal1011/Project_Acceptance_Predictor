@@ -1,0 +1,142 @@
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px;
+}
+
+.ok{
+    /* background-color: rgb(222, 233, 243); */
+    background-image: radial-gradient(circle at center,#b393d3, #553c9a);
+}
+
+.custom-select{
+    font-size: medium;
+    margin: 10px;
+}
+
+.flex-container2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.flex-container3{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container4{
+    /* width: fit-content; */
+    /* height: fit-content; */
+    /* background-color: antiquewhite; */
+    /* background-image: radial-gradient(circle at center,#b393d3, #553c9a); */
+    /* align-items: center; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-self: center; */
+}
+
+
+
+
+.logo{
+    margin: 10px;
+
+}
+
+.title{
+    font-size: 60px;
+    font-weight: 550;
+    background-image: linear-gradient(to left, #c1e860, #b3c49f);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+
+.buttonFlex{
+    text-align: right;
+    background-color: #6da7ef;
+    /* background-color: white; */
+}
+
+.flex-container5{
+    display: flex;
+    justify-content:flex-end;
+}
+
+#essayWindow{
+    resize:none;
+}
+
+.flex-container6{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flex-container7{
+    /* justify-content:left; */
+    text-align: center;
+    
+    margin-bottom: 50px;
+}
+
+.flex-container8{
+    /* justify-content: right; */
+    text-align: right;
+    margin: 10px;
+    margin-left: 70px;
+}
+
+.progress{
+    margin-left: 150px;
+    margin-right: 150px;
+    height: 40px;
+}
+
+#projCategories{
+    display: flex;
+    gap: 12px;
+}
+
+.projCat {
+    display: flex;
+    gap: 12px;
+    background: #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0.3);
+border-radius: 14px;
+padding: 4px 8px;
+}
+
+.projCat > p {
+    margin: 0;
+}
+
+.projCat > div {
+    cursor: pointer;
+}
+
+
+#projSubCategories{
+    display: flex;
+    gap: 12px;
+}
+
+.projSubCat {
+    display: flex;
+    gap: 12px;
+    background: #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0.3);
+border-radius: 14px;
+padding: 4px 8px;
+}
+
+.projSubCat > p {
+    margin: 0;
+}
+
+.projSubCat > div {
+    cursor: pointer;
+}

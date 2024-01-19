@@ -1,0 +1,28 @@
+{% extends 'inputform/base.html' %} {% load static %} {% block content %}
+
+<p  align="center" style="font-weight: bold; color: white; margin-top: 16px;"> Saved Projects </p> 
+
+<table class="table table-bordered table-hover table-dark mb-0">
+
+    <thead>
+        <tr align="center">
+            <th>Project Title</th>
+            <th style="width:40%">Essay</th>
+            <th>Price</th>
+            <th>Selection Probability</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in projects %}
+        <tr>
+            <td align="center">{{p.title}}</td>
+            <td>{{p.essay}}</td>
+            <td align="center">{{p.price}}</td>
+            <td align="center">{{p.probability}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock content %}

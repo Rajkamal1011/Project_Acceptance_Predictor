@@ -1,0 +1,46 @@
+{% extends 'inputform/base.html' %}
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static "css/circular-widget.css" %}">
+{% endblock extrahead %}
+
+{% block content %}
+
+{% include 'inputform/messages.html' %}
+
+
+  <div class="container">
+    
+    <div class="progress-card">
+      <div class="circular-progress">
+        <span class="progress-value">{{resultLR}}%</span>
+      </div>
+      <input type="hidden" id="id_result_lr" value="{{resultLR}}">
+      <span class="text">Logistic Regression</span>
+    </div>
+
+    <div class="progress-card">
+      <div class="circular-progress2">
+        <span class="progress-value2">{{resultXGB}}%</span>
+      </div>
+      <input type="hidden" id="id_result_xgb" value="{{resultXGB}}">
+      <span class="text">XGBoost</span>
+    </div>
+
+    <div class="progress-card">
+      <div class="circular-progress3">
+        <input type="hidden" id="resultValue" value="20"> 
+        <span class="progress-value3">{{resultDL}}%</span>
+      </div>
+      <input type="hidden" id="id_result_dl" value="{{resultDL}}">
+      <span class="text">Deep Learning</span>
+    </div>
+    
+  </div>  
+
+  
+
+<!-- Script -->
+<script src="{% static 'javascript/scriptResult.js' %}"></script>
+{% endblock content %}
